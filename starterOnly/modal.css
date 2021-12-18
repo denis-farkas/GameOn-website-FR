@@ -21,6 +21,10 @@ body {
   margin: 0 auto;
 }
 
+form {
+  display: block;
+}
+
 p {
   margin-bottom: 0;
   padding: 0.5vw;
@@ -35,10 +39,10 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -69,7 +73,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -77,7 +83,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -90,16 +98,16 @@ img {
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
     margin-top: -15px;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -111,8 +119,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -169,6 +175,18 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
+.bground-valid {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(35, 35, 35);
+}
+
 .content {
   margin: 5% auto;
   width: 100%;
@@ -186,6 +204,12 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+}
+
+.modal-body-valid {
+  padding: 15px 8%;
+  margin: 15px auto;
+  display: none;
 }
 
 label {
@@ -296,7 +320,9 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+
+.close,
+.close_valid {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -322,7 +348,8 @@ input[data-error]::after {
   transform: rotate(-45deg);
 }
 .btn-submit,
-.btn-signup {
+.btn-signup,
+.btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -526,4 +553,3 @@ footer {
     opacity: 1;
   }
 }
-
