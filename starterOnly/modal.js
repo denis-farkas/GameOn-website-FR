@@ -10,12 +10,13 @@ function editNav() {
 
 
 // DOM Elements
-const modalValid =document.querySelector(".modal-body-valid");
+const modalValid =document.querySelector(".valid");
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formSignUp =document.getElementsByName('reserve');
 const formData = document.querySelectorAll(".formData");
 const closer = document.querySelector(".close");
+const btnClose = document.querySelector(".btn-close");
 const inpFirst = document.getElementById("first");
 const inpLast = document.getElementById("last");
 const inpEmail = document.getElementById("email");
@@ -46,6 +47,7 @@ function validModal(){
 
 //close modal event
 closer.addEventListener("click", closeModal);
+btnClose.addEventListener("click", closeModal);
 
 
 

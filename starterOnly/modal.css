@@ -4,6 +4,7 @@
   --modal-duration: 0.8s;
   /*pour test*/
   --transp: rgba(255, 255, 255, 0);
+  font-size: 18px;
 }
 * {
   box-sizing: border-box;
@@ -17,7 +18,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-default);
-  font-size: 18px;
   max-width: 1300px;
 
   /*pour test
@@ -49,10 +49,12 @@ img {
 }
 .header-logo {
   float: left;
+  padding-bottom: 1vh;
 }
 .main-navbar {
   float: right;
 }
+
 .topnav a {
   float: left;
   display: block;
@@ -61,7 +63,7 @@ img {
   padding: 12px 12px;
   margin: 5px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1rem;
   font-family: Roboto, sans-serif;
 }
 
@@ -86,6 +88,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .topnav {
+    font-size: 65%;
+  }
   .topnav a {
     display: none;
   }
@@ -93,11 +98,14 @@ img {
     float: right;
     display: block;
   }
+
+  .header-logo {
+    width: 50%;
+    margin-left: 2rem;
+  }
   .header-logo img {
-    width: 48%;
-    height: auto;
+    width: 80%;
     padding-top: 2.8vh;
-    padding-left: 8vw;
   }
 }
 
@@ -129,7 +137,7 @@ img {
 }
 
 main {
-  font-size: 130%;
+  font-size: 100%;
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
@@ -140,6 +148,11 @@ main {
   text-align: justify;
 }
 
+@media screen and (max-width: 540px) {
+  main {
+    font-size: 62.5%;
+  }
+}
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -171,7 +184,7 @@ main {
   color: #fff;
   border-radius: 15px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .button:hover {
@@ -179,7 +192,7 @@ main {
 }
 
 .smFont {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .bground {
@@ -188,27 +201,16 @@ main {
   z-index: 1;
   left: 0;
   top: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.bground-valid {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(35, 35, 35);
-}
-
 .content {
-  margin: 5% auto;
+  margin: 2% auto;
   width: 100%;
+  height: 100%;
   max-width: 500px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
@@ -225,39 +227,43 @@ main {
   margin: 15px auto;
 }
 
-.modal-body-valid {
-  padding: 15px 8%;
-  margin: 15px auto;
+.valid {
+  padding: 80% 20% 8%;
+  text-align: center;
   display: none;
+}
+
+.valid h2 {
+  margin-bottom: 115%;
 }
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
+  font-size: 1rem;
   font-weight: normal;
   display: inline-block;
-  margin-bottom: 11px;
+  margin-bottom: 0.6rem;
 }
 input {
-  padding: 8px;
+  padding: 0.4rem;
   border: 0.8px solid #ccc;
   outline: none;
 }
 .text-control {
   margin: 0;
-  padding: 8px;
+  padding: 0.4rem;
   width: 100%;
   border-radius: 8px;
-  font-size: 20px;
-  height: 48px;
+  font-size: 1.2rem;
+  height: 3rem;
 }
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 0.5em;
   color: #e54858;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
   text-align: right;
   line-height: 0.3;
   opacity: 0;
@@ -278,8 +284,8 @@ input[data-error]::after {
 .checkbox-label,
 .checkbox2-label {
   position: relative;
-  margin-left: 36px;
-  font-size: 12px;
+  margin-left: 2rem;
+  font-size: 0.8rem;
   font-weight: normal;
 }
 .checkbox-label .checkbox-icon,
@@ -379,6 +385,7 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -448,7 +455,7 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .hero-section {
   min-height: 93vh;
@@ -462,9 +469,7 @@ input[data-error]::after {
 .hero-content {
   padding: 51px 67px;
   grid-column: span 4;
-
   background: #232323;
-
   color: #fff;
   position: relative;
   text-align: left;
@@ -474,9 +479,7 @@ input[data-error]::after {
   content: "";
   width: 100%;
   height: 100%;
-
   background: #232323;
-
   position: absolute;
   right: -80px;
   top: 0;
@@ -486,12 +489,19 @@ input[data-error]::after {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 6rem;
+  font-size: 2rem;
   font-weight: normal;
   white-space: nowrap;
 }
+
+@media screen and (min-width: 1300px) {
+  .hero-headline {
+    font-size: 5rem;
+  }
+}
+
 .hero-text {
-  width: 146%;
+  width: 130%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -499,7 +509,7 @@ input[data-error]::after {
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
@@ -562,12 +572,12 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 2.32rem;
+    font-size: 2rem;
     white-space: normal;
   }
   .hero-text {
     width: unset;
-    font-size: 0.73rem;
+    font-size: 0.65rem;
     margin-top: 3vh;
     padding-right: 4vw;
   }
@@ -584,10 +594,20 @@ footer {
     padding: 0.8vh 8vw;
     font-size: 0.8rem;
   }
+
+  .bground {
+    top: 3.5rem;
+    background-color: var(--transp);
+  }
+
+  .content {
+    margin: 1% auto;
+  }
+
   .copyrights {
     text-align: center;
     margin: 0px auto;
-    font-size: 1.3vh;
+    font-size: 1rem;
   }
 
   footer {
