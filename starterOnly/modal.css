@@ -23,7 +23,6 @@ body {
   flex-direction: column;
   font-family: var(--font-default);
   max-width: 1300px;
-  max-height: auto;
 
   /*pour test
   background-image: url("M-HomePage.png");
@@ -281,7 +280,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/*
+/* 
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
@@ -608,45 +607,6 @@ footer {
 
   .content {
     margin: 0 auto;
-    max-height: 736px;
-  }
-
-  label {
-    font-size: 3.5vw;
-    margin-bottom: 1.5vw;
-  }
-
-  .text-control {
-    font-size: 4vw;
-    height: 4vh;
-  }
-
-  .formData[data-error]::after {
-    font-size: 1em;
-  }
-
-  .text-label {
-    font-size: 4vw;
-  }
-
-  .checkbox-label .checkbox-icon,
-  .checkbox2-label .checkbox-icon {
-    display: block;
-    width: 15px;
-    height: 15px;
-  }
-
-  .checkbox-label,
-  .checkbox2-label {
-    font-size: 3vw;
-  }
-
-  .valid {
-    padding: 85% 20%;
-  }
-
-  .valid h2 {
-    margin-bottom: 96%;
   }
 
   .copyrights {
