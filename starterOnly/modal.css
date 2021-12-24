@@ -258,7 +258,7 @@ input {
   margin: 0;
   padding: 0.4rem;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 1vh;
   font-size: 1.2rem;
   height: 3rem;
 }
@@ -616,7 +616,7 @@ footer {
 
   .text-control {
     font-size: 4vw;
-    height: 4vh;
+    height: 5vh;
   }
 
   .formData[data-error]::after {
@@ -645,6 +645,11 @@ footer {
 
   .valid h2 {
     margin-bottom: 96%;
+  }
+
+  .valid button {
+    font-size: 4vw;
+    padding: 3vw 15vw;
   }
 
   .copyrights {
