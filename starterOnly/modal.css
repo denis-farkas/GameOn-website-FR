@@ -602,11 +602,49 @@ footer {
 
   .bground {
     top: 3.5rem;
-    background-color: var(--transp);
+    background-color: rgba(26, 39, 156, 0.4);
   }
 
   .content {
     margin: 0 auto;
+  }
+
+  label {
+    font-size: 3.5vw;
+    margin-bottom: 1.5vw;
+  }
+
+  .text-control {
+    font-size: 4vw;
+    height: 4vh;
+  }
+
+  .formData[data-error]::after {
+    font-size: 2.8vw;
+  }
+
+  .text-label {
+    font-size: 3.5vw;
+  }
+
+  .checkbox-label .checkbox-icon,
+  .checkbox2-label .checkbox-icon {
+    display: block;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .checkbox-label,
+  .checkbox2-label {
+    font-size: 3vw;
+  }
+
+  .valid {
+    padding: 85% 20%;
+  }
+
+  .valid h2 {
+    margin-bottom: 96%;
   }
 
   .copyrights {
@@ -617,6 +655,20 @@ footer {
 
   footer {
     margin-bottom: 0.5vh;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  .bground {
+    overflow-y: initial !important;
+  }
+  .modal-body {
+    height: 80vh;
+    overflow-y: auto;
+  }
+
+  .valid h2 {
+    margin-bottom: 100%;
   }
 }
 
