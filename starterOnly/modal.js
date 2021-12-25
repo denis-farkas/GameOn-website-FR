@@ -1,7 +1,7 @@
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
-    x.className += " responsive";
+    x.className += "responsive";
   } else {
     x.className = "topnav";
   }
@@ -55,10 +55,10 @@ function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function locate(){
+function countRadioChecked(){
   let count=0;
-  for(n=0; n<=5; n++){
-    if(inpLocation[n].checked === true){
+  for(index=0; index<=5; index++){
+    if(inpLocation[index].checked){
       count++;
     }
   }
@@ -114,18 +114,18 @@ if(inpQuantity.value === ''){
   formData[4].setAttribute("data-error-visible", "false");
 }
 
-if(locate() == 0){
+if(countRadioChecked() === 0){
   formData[5].setAttribute("data-error-visible", "true");
  return false;
 }else{
   formData[5].setAttribute("data-error-visible", "false");
 }
 
-if(inpAccept.checked === false){
+if(!inpAccept.checked){
   formData[6].setAttribute("data-error-visible", "true");
   return false
 }else{
-  formData[5].setAttribute("data-error-visible", "false");
+  formData[6].setAttribute("data-error-visible", "false");
 }
 
 validModal();
