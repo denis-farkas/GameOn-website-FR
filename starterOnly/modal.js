@@ -40,6 +40,7 @@ function closeModal(){
   modalbg.style.display = "none";
 }
 
+//close form modal and open success modal
 function validModal(){
   formSignUp[0].style.display ="none";
   modalValid.style.display="block";
@@ -50,11 +51,12 @@ closer.addEventListener("click", closeModal);
 btnClose.addEventListener("click", closeModal);
 
 
-
+//regex verify if this is an email
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
+//count if input location is checked between all locations
 function countRadioChecked(){
   let count=0;
   for(index=0; index<=5; index++){
@@ -68,12 +70,12 @@ function countRadioChecked(){
 
 
 function validate(){
- 
+ //security trim input
   const firstValue = inpFirst.value.trim();
   const lastValue = inpLast.value.trim();
   const emailValue = inpEmail.value.trim();
 
-
+//at least 2 characters in input
 if(firstValue.length < 2){
   formData[0].setAttribute("data-error-visible", "true"); 
   return false;
@@ -81,6 +83,7 @@ if(firstValue.length < 2){
   formData[0].setAttribute("data-error-visible", "false");
 }
 
+//at least 2 characters in input
 if(lastValue.length < 2){
   formData[1].setAttribute("data-error-visible", "true");
   return false;
@@ -88,6 +91,7 @@ if(lastValue.length < 2){
   formData[1].setAttribute("data-error-visible", "false");
 }
 
+//email no empty and valid regex
 if(emailValue === '' ) {
   formData[2].setAttribute("data-error", "Veuillez indiquer un email");
   formData[2].setAttribute("data-error-visible", "true");
@@ -100,6 +104,7 @@ if(emailValue === '' ) {
   formData[2].setAttribute("data-error-visible", "false");
 }
 
+//birthdate no empty
 if(inpBirth.value === ''){
   formData[3].setAttribute("data-error-visible", "true");
   return false;
@@ -107,6 +112,7 @@ if(inpBirth.value === ''){
   formData[3].setAttribute("data-error-visible", "false");
 }
 
+//quantity no empty
 if(inpQuantity.value === ''){
   formData[4].setAttribute("data-error-visible", "true");
   return false;
@@ -114,6 +120,7 @@ if(inpQuantity.value === ''){
   formData[4].setAttribute("data-error-visible", "false");
 }
 
+//one radio checked
 if(countRadioChecked() === 0){
   formData[5].setAttribute("data-error-visible", "true");
  return false;
@@ -121,13 +128,14 @@ if(countRadioChecked() === 0){
   formData[5].setAttribute("data-error-visible", "false");
 }
 
+//accept rgpd
 if(!inpAccept.checked){
   formData[6].setAttribute("data-error-visible", "true");
   return false
 }else{
   formData[6].setAttribute("data-error-visible", "false");
 }
-
+//close form and open success modal
 validModal();
 }
 
