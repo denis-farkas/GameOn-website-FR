@@ -1,7 +1,7 @@
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
-    x.className += "responsive";
+    x.className += " responsive";
   } else {
     x.className = "topnav";
   }
@@ -37,7 +37,10 @@ function launchModal() {
 
 //close modal form
 function closeModal(){
+  formSignUp[0].reset();
   modalbg.style.display = "none";
+  formSignUp[0].style.display ="block";
+  modalValid.style.display="none";
 }
 
 //close form modal and open success modal
@@ -55,6 +58,23 @@ btnClose.addEventListener("click", closeModal);
 function isEmail(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+function isOnlyAlphabet(texte){
+  return /^[a-zA-Z]*$/.test(texte);
+}
+
+function isPast(inpBirth){
+  const date = new Date(inpBirth.value);
+  console.log(date);
+  console.log(Date.now());
+  if(date.getTime() > Date.now()){
+    return false;
+  }else{
+    return true;
+  }
+}
+
+
 
 //count if input location is checked between all locations
 function countRadioChecked(){
@@ -76,7 +96,7 @@ function validate(){
   const emailValue = inpEmail.value.trim();
 
 //at least 2 characters in input
-if(firstValue.length < 2){
+if(firstValue.length < 2 || !isOnlyAlphabet(firstValue)){
   formData[0].setAttribute("data-error-visible", "true"); 
   return false;
 }else{
@@ -84,7 +104,7 @@ if(firstValue.length < 2){
 }
 
 //at least 2 characters in input
-if(lastValue.length < 2){
+if(lastValue.length < 2 || !isOnlyAlphabet(lastValue)){
   formData[1].setAttribute("data-error-visible", "true");
   return false;
 }else{
@@ -105,7 +125,7 @@ if(emailValue === '' ) {
 }
 
 //birthdate no empty
-if(inpBirth.value === ''){
+if(inpBirth.value === '' || !isPast(inpBirth)){
   formData[3].setAttribute("data-error-visible", "true");
   return false;
 }else{
@@ -135,7 +155,8 @@ if(!inpAccept.checked){
 }else{
   formData[6].setAttribute("data-error-visible", "false");
 }
-//close form and open success modal
+//reset and close form and open success modal
+
 validModal();
 }
 
